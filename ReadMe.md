@@ -2,9 +2,9 @@ intel 6-14代pve虚拟机核显直通使用rom 使用说明 只支持qemu7.0--qe
 
 Usage Instructions for Intel 6th-14th Generation CPU Integrated GPU Passthrough in PVE Virtual Machines using Custom ROM Files
 
-qemu9.2版本上游源码问题使用直接花屏不支持请降级使用9.1，apt reinstall pve-qemu-kvm=9.1.2-3 或者使用我的项目 https://github.com/lixiaoliu666/pve-anti-detection 的9.2版本deb包解决花屏无bios画面问题。不支持ultra1 2代台式机和笔记本，没机器测试懒得搞。
+qemu9.2版本上游源码问题使用直接花屏不支持请降级使用9.1，apt reinstall pve-qemu-kvm=9.1.2-3 或者使用我的项目 https://github.com/AICodo/pve-anti-detection 的9.2版本deb包解决花屏无bios画面问题。不支持ultra1 2代台式机和笔记本，没机器测试懒得搞。
 
-"The upstream source code of QEMU 9.2 has compatibility issues causing screen tearing. Please downgrade to version 9.1. apt reinstall pve-qemu-kvm=9.1.2-3  or  use the 9.2 version deb package from my project: https://github.com/lixiaoliu666/pve-anti-detection . Note that Ultra 1/2 generation desktops and laptops are unsupported，no testing was done due to lack of devices.
+"The upstream source code of QEMU 9.2 has compatibility issues causing screen tearing. Please downgrade to version 9.1. apt reinstall pve-qemu-kvm=9.1.2-3  or  use the 9.2 version deb package from my project: https://github.com/AICodo/pve-anti-detection . Note that Ultra 1/2 generation desktops and laptops are unsupported，no testing was done due to lack of devices.
 
 交流qq群 25438194（666)
 
@@ -61,7 +61,7 @@ If you don't want to compile and prefer to use it directly, simply use the 6-14.
 
 ①、首先下载本项目Download this project first
 
-git clone https://github.com/lixiaoliu666/intel6-14rom 可能会断掉，请多试几次。你可以使用代理加速（如何切换git clone后的版本自行百度）。
+git clone https://github.com/AICodo/intel6-14rom 可能会断掉，请多试几次。你可以使用代理加速（如何切换git clone后的版本自行百度）。
 因为只使用编译后的efi以及生成的rom
 
 ②、进入intel6-14rom目录运行一下 bash build_efi_rom.sh 成功
@@ -196,7 +196,7 @@ Build OVMF.fd for KVM 中的0001-0004.....patch这4个补丁，这4个补丁和h
 
 Intel 4-14代核显直通源码讲解视频，从此再也没有闭源折腾人了，再也没有秘密可言了，希望后来人继续折腾继续贡献源码
 
-4.9、如果你觉得以上操作都麻烦，可以直接fork本项目，然后直接actions进行云编译,或者直接下载本项目云编译releases里面的6-14.rom和分别的rom https://github.com/lixiaoliu666/intel6-14rom/releases
+4.9、如果你觉得以上操作都麻烦，可以直接fork本项目，然后直接actions进行云编译,或者直接下载本项目云编译releases里面的6-14.rom和分别的rom https://github.com/AICodo/intel6-14rom/releases
 
 感谢佛西和蜗牛网友写的actions能够实现本项目自动云编译和云发布releases
 
@@ -228,4 +228,5 @@ https://foxi.buduanwang.vip/virtualization/pve/1602.html/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=lixiaoliu666/intel6-14rom&type=Date)](https://www.star-history.com/#lixiaoliu666/intel6-14rom&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=AICodo/intel6-14rom&type=Date)](https://www.star-history.com/#AICodo/intel6-14rom&Date)
+
