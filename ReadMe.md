@@ -26,10 +26,10 @@ This project is developed by adding or modifying specific files based on the for
 
 For 12th-14th Gen CPUs: Achieved full compatibility.BIOS interface, OS installation, and graphics driver installation now work flawlessly.HDMI audio output is functional.Successfully bypassed the closed-source limitations of gangqizai's project https://github.com/gangqizai/igd , eliminating dependency on its proprietary binaries.
 
-2、11代： bios画面，安装系统，安装显卡驱动都可以。就是hdmi声卡出不来，解决办法就是要刷机器bios，把bios里面的两个参数改了或者弄成能设置选择 bios刷进去就好了。大概就是iDisplay Audio Link Frequency改为48mhz，iDisplay Audio Link T-Mode改为4T，如果不行再降低。详见：https://www.bilibili.com/video/BV1Mc41147dA 或者搜b站其他up主他们的教程 。刷bios有风险。
+2、11代： bios画面，安装系统，安装显卡驱动都可以。就是hdmi声卡出不来，解决办法就是要刷机器bios，把bios里面的两个参数改了或者弄成能设置选择 bios刷进去就好了。大概就是iDisplay Audio Link Frequency改为48mhz，iDisplay Audio Link T-Mode改为4T，如果不行再降低。
 
 For 11th Gen Intel CPUs：BIOS interface, OS installation, and graphics driver installation work normally.HDMI audio not detected: Requires modifying BIOS parameters to resolve.Solution Steps：Flash Modified BIOS ,Modify two critical parameters in BIOS settings:iDisplay Audio Link Frequency: Set to 48MHz,iDisplay Audio Link T-Mode: Set to 4T.If issues persist, reduce the values incrementally (e.g., try lower frequencies or T-Mode configurations).
-Refer to Bilibili tutorials (e.g.,  https://www.bilibili.com/video/BV1Mc41147dA ) or search "11th Gen HDMI audio BIOS fix" on Bilibili.
+
 
 3、6-10代：如果你的机器可以bios开csm并把核显设置为Legacy模式。那你就虚拟机seabios+i440fx或者q35直接用就是，都不需要加载什么rom，即使要加载也是从机器里面提取的而已（具体请参考网上一大堆成功案例。也不需要我这里提供的什么6-14.rom这货）。
 
@@ -46,7 +46,7 @@ Some netizens have reported that the black - screen issue after driver installat
 
 三、关于虚拟机机型设置Virtual Machine Configuration Settings：
 
-intel核显直通6-14代统一使用ovmf+i440fx机型（i440fx至少7.0以上到最新都可以），当然也支持ovmf+q35（这个说下是可以的，大家就别去折腾找虐了，i440fx足够稳定了，我都是劝人放弃q35这个想法，q35看看这两个视频就是了 https://www.bilibili.com/video/BV1gu4m1K7CX 和 https://www.bilibili.com/video/BV1VS411w7ko ，别去浪费时间折腾，直接玩独显q35直通没烦恼）
+intel核显直通6-14代统一使用ovmf+i440fx机型（i440fx至少7.0以上到最新都可以），当然也支持ovmf+q35（这个说下是可以的，大家就别去折腾找虐了，i440fx足够稳定了，我都是劝人放弃q35这个想法，别去浪费时间折腾，直接玩独显q35直通没烦恼）
 
 For Intel integrated graphics passthrough across 6th to 14th generations, it is recommended to unify the configuration using OVMF + i440fx machine type (i440fx version 7.0 or newer). While OVMF + q35 is technically supported, we strongly advise against wasting time troubleshooting q35 for integrated graphics passthrough.q35 is incompatible with Intel iGPU.
 
@@ -182,8 +182,7 @@ UBU 1.79.17下载地址：https://pan.baidu.com/s/1pD7NqJoOThQawJw59NyTHQ 提取
 
 ①、到你机器的官网去下载
 
-②、用AMI bios（ami固件）提取工具 直接提取 类似教程详见 https://www.bilibili.com/read/cv25423474/ 提取物理机bios 部分
-
+②、用AMI bios（ami固件）提取工具 直接提取 类似教程详见 
 4.7、源码来源
 
 https://eci.intel.com/docs/3.0.2/components/kvm-hypervisor.html?highlight=igd
@@ -192,9 +191,6 @@ Build OVMF.fd for KVM 中的0001-0004.....patch这4个补丁，这4个补丁和h
 
 4.8、源码更新了什么
 
-相比较于源码来源更新了什么 请见b站视频源码讲解 https://www.bilibili.com/video/BV1aN411g7sf
-
-Intel 4-14代核显直通源码讲解视频，从此再也没有闭源折腾人了，再也没有秘密可言了，希望后来人继续折腾继续贡献源码
 
 4.9、如果你觉得以上操作都麻烦，可以直接fork本项目，然后直接actions进行云编译,或者直接下载本项目云编译releases里面的6-14.rom和分别的rom https://github.com/AICodo/intel6-14rom/releases
 
@@ -229,4 +225,5 @@ https://foxi.buduanwang.vip/virtualization/pve/1602.html/
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=AICodo/intel6-14rom&type=Date)](https://www.star-history.com/#AICodo/intel6-14rom&Date)
+
 
