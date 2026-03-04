@@ -61,7 +61,7 @@ jobs:
           tag_name: ${{ format('v2.0-{0}', steps.current-time.outputs.formattedTime) }}
           release_name: ${{ format('v2.0 build-{0}', steps.current-time.outputs.formattedTime) }}
           body: |
-            build 6-14 all roms 只适用于qemu10及以上版本（不支持qemu7 8 9）ovmf+i440fx 10核显直通请看本项目说明，ovmf+q35 10请阅读此教程 https://www.bilibili.com/read/cv41702099
+            build 6-14 all roms 只适用于qemu10及以上版本（不支持qemu7 8 9）ovmf+i440fx 10核显直通请看本项目说明，ovmf+q35 10请阅读此教程
           draft: false
           prerelease: false
         env:
